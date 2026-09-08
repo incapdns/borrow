@@ -12,10 +12,10 @@ repository = "https://github.com/wdanilo/borrow"
 proc-macro = true
 
 [dependencies]
-syn = { version = "2" }
+syn = { version = "3" }
 quote = { version = "1" }
 proc-macro2 = { version = "1", features = ["span-locations"] }
-itertools = { version = "0.14" }
+itertools = { version = "0.15" }
 
 [lints]
 workspace = true
