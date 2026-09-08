@@ -1,3 +1,5 @@
+#![cfg_attr(not(feature = "std"), no_std)]
+
 //! <img width="680" alt="banner" src="https://github.com/user-attachments/assets/1740befa-c25d-4428-bda8-c34d437f333e">
 //!
 //! <br/>
@@ -1268,10 +1270,10 @@ pub use tstr::TS as Str;
 
 pub use hlist::*;
 
-use std::fmt::Debug;
-use std::marker::PhantomData;
-use std::ops::Deref;
-use std::ops::DerefMut;
+use core::fmt::Debug;
+use core::marker::PhantomData;
+use core::ops::Deref;
+use core::ops::DerefMut;
 
 // ==============
 // === Traits ===

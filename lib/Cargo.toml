@@ -1,6 +1,6 @@
 [package]
 name = "borrow"
-version = "2.0.0"
+version = "2.1.0"
 authors = ["Wojciech Danilo <wojciech.danilo@gmail.com>"]
 description = "Zero-overhead, safe implementation of partial borrows. This crate allows you to borrow selected fields from a struct and split structs into non-overlapping sets of borrowed fields."
 edition = "2021"
@@ -11,7 +11,7 @@ repository = "https://github.com/wdanilo/borrow"
 [lib]
 
 [dependencies]
-borrow-macro = { version = "2.0.0", path = "../macro" }
+borrow-macro = { version = "2.1.0", path = "../macro" }
 tstr = { version = "0.3" }
 web-sys = { version = "0.3", optional = true, features = ["console"] }
 
@@ -19,6 +19,8 @@ web-sys = { version = "0.3", optional = true, features = ["console"] }
 workspace = true
 
 [features]
-wasm = ["web-sys"]
-usage_tracking = []
+default = ["std"]
+std = []
+wasm = ["std", "web-sys"]
+usage_tracking = ["std"]
 no_usage_tracking = []

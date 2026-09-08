@@ -4,7 +4,7 @@ version = 4
 
 [[package]]
 name = "borrow"
-version = "2.0.0"
+version = "2.1.0"
 dependencies = [
  "borrow-macro",
  "tstr",
@@ -13,12 +13,19 @@ dependencies = [
 
 [[package]]
 name = "borrow-macro"
-version = "2.0.0"
+version = "2.1.0"
 dependencies = [
  "itertools",
  "proc-macro2",
  "quote",
  "syn",
+]
+
+[[package]]
+name = "borrow-no-std-smoke"
+version = "0.0.0"
+dependencies = [
+ "borrow",
 ]
 
 [[package]]

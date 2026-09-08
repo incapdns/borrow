@@ -1,0 +1,13 @@
+[package]
+name = "borrow-no-std-smoke"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+borrow = {
+    path = "../lib",
+    default-features = false,
+    features = ["no_usage_tracking"],
+}
+

@@ -207,7 +207,7 @@ pub fn partial_borrow_derive(input_raw: proc_macro::TokenStream) -> proc_macro::
             pub struct #ref_ident<__S__, __Track__, #(#fields_param,)*>
             where __Track__: borrow::Bool {
                 #(#fields_vis #fields_ident: borrow::Field<__Track__, #fields_param>,)*
-                marker: std::marker::PhantomData<__S__>,
+                marker: core::marker::PhantomData<__S__>,
                 usage_tracker: borrow::UsageTracker,
             }
         }
@@ -376,7 +376,7 @@ pub fn partial_borrow_derive(input_raw: proc_macro::TokenStream) -> proc_macro::
                     use borrow::CloneField;
                     #ref_ident {
                         #(#fields_ident: self.#fields_ident.clone_field_disabled_usage_tracking(),)*
-                        marker: std::marker::PhantomData,
+                        marker: core::marker::PhantomData,
                         usage_tracker: borrow::UsageTracker::new(),
                     }
                 }
@@ -502,12 +502,12 @@ pub fn partial_borrow_derive(input_raw: proc_macro::TokenStream) -> proc_macro::
                     (
                         #ref_ident {
                             #(#fields_ident,)*
-                            marker: std::marker::PhantomData,
+                            marker: core::marker::PhantomData,
                             usage_tracker
                         },
                         #ref_ident {
                             #(#fields_ident: #fields_rest_ident,)*
-                            marker: std::marker::PhantomData,
+                            marker: core::marker::PhantomData,
                             usage_tracker: borrow::UsageTracker::new()
                         }
                     )
@@ -814,7 +814,7 @@ pub fn partial_borrow_derive(input_raw: proc_macro::TokenStream) -> proc_macro::
                             usage_tracker.clone(),
                         ),
                     )*
-                    marker: std::marker::PhantomData,
+                    marker: core::marker::PhantomData,
                     usage_tracker
                 };
                 borrow::HasUsageTrackedFields::disable_field_usage_tracking(&struct_ref);
